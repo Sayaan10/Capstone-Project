@@ -1,0 +1,22 @@
+<h1 style="background-color: greenyellow; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">List of Admins</h1>
+
+<div style="text-align: center;">
+<table class="table table-dark table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Admin ID</th>
+            <th>Admin Name</th>
+            <th>Admin Email</th>
+            <th>Admin Password</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let a of admins" class="container-fluid">
+        <tr>
+            <td>{{a.aid}}</td>
+            <td>{{a.aname}}</td>
+            <td>{{a.aemail}}</td>
+            <td>{{a.apassword}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

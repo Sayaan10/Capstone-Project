@@ -1,0 +1,61 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>User Register</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Username:</label>
+                        <input type="text" placeholder="Username" [(ngModel)]="user.uname" formControlName="uname" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['uname'].errors}">
+
+                        <div *ngIf="submitted && f['uname'].errors" class="invalid-feedback">
+                            <div *ngIf="f['uname'].errors['required']" style="color: red;">
+                                Username Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Age:</label>
+                        <input type="text" placeholder="Age" [(ngModel)]="user.uage" formControlName="uage" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['uage'].errors}">
+
+                        <div *ngIf="submitted && f['uage'].errors" class="invalid-feedback">
+                            <div *ngIf="f['uage'].errors['required']" style="color: red;">
+                                Age Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Email:</label>
+                        <input type="text" placeholder="Email Address" [(ngModel)]="user.uemail" formControlName="uemail" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['uemail'].errors}">
+
+                        <div *ngIf="submitted && f['uemail'].errors" class="invalid-feedback">
+                            <div *ngIf="f['uemail'].errors['required']" style="color: red;">
+                                Email Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Password:</label>
+                        <input type="password" placeholder="Password" [(ngModel)]="user.upassword" formControlName="upassword" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['upassword'].errors}">
+
+                        <div *ngIf="submitted && f['upassword'].errors" class="invalid-feedback">
+                            <div *ngIf="f['upassword'].errors['required']" style="color: red;">
+                                Password Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="r==true;">
+    <h2 style="background-color: burlywood; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;"> Registered successfully, Please login again </h2>
+</div>

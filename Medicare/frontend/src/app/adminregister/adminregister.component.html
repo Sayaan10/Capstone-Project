@@ -1,0 +1,50 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Admin Register</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Username:</label>
+                        <input type="text" placeholder="Username" [(ngModel)]="admin.aname" formControlName="aname" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['aname'].errors}">
+
+                        <div *ngIf="submitted && f['aname'].errors" class="invalid-feedback">
+                            <div *ngIf="f['aname'].errors['required']" style="color: red;">
+                                Username Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Email:</label>
+                        <input type="text" placeholder="Email Address" [(ngModel)]="admin.aemail" formControlName="aemail" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['aemail'].errors}">
+
+                        <div *ngIf="submitted && f['aemail'].errors" class="invalid-feedback">
+                            <div *ngIf="f['aemail'].errors['required']" style="color: red;">
+                                Email Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Password:</label>
+                        <input type="password" placeholder="Password" [(ngModel)]="admin.apassword" formControlName="apassword" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['apassword'].errors}">
+
+                        <div *ngIf="submitted && f['apassword'].errors" class="invalid-feedback">
+                            <div *ngIf="f['apassword'].errors['required']" style="color: red;">
+                                Password Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="r==true;">
+    <h2 style="background-color: burlywood; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;"> Registered successfully, Please login again </h2>
+</div>

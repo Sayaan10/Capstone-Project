@@ -1,0 +1,24 @@
+<h1 style="background-color: greenyellow; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">List of Users</h1>
+
+<div style="text-align: center;">
+<table class="table table-dark table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Age</th>
+            <th>User Email</th>
+            <th>User Password</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let u of users" class="container-fluid">
+        <tr>
+            <td>{{u.uid}}</td>
+            <td>{{u.uname}}</td>
+            <td>{{u.uage}}</td>
+            <td>{{u.uemail}}</td>
+            <td>{{u.upassword}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

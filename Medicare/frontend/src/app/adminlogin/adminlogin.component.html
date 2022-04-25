@@ -1,0 +1,50 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Admin Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Username:</label>
+                        <input type="text" placeholder="Username" [(ngModel)]="admin.aname" formControlName="aname" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['aname'].errors}">
+
+                        <div *ngIf="submitted && f['aname'].errors" class="invalid-feedback">
+                            <div *ngIf="f['aname'].errors['required']" style="color: red;">
+                                Username Required!
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Password:</label>
+                        <input type="password" placeholder="Password" [(ngModel)]="admin.apassword" formControlName="apassword" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['apassword'].errors}">
+
+                        <div *ngIf="submitted && f['apassword'].errors" class="invalid-feedback">
+                            <div *ngIf="f['apassword'].errors['required']" style="color: red;">
+                                Password Required!
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                    <h6 style="background-color: whitesmoke; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">
+                        (Click twice to Login)</h6>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="a==false;">
+    <h2 style="background-color: burlywood; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;"> Invalid Credentials, please try again </h2>
+</div>
+
+<div style="text-align: center; font-size: large; background-color: yellowgreen; font-family: Georgia, 'Times New Roman', Times, serif;">
+<a routerLink="adminreg">New User? Click here to register</a>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+<h1 style="background-color: greenyellow; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">List of Enabled Medicines</h1>
+
+<div style="text-align: center;">
+<table class="table table-dark table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Medicine ID</th>
+            <th>Medicine Name</th>
+            <th>Medicine Price</th>
+            <th>Medicine Description</th>
+            <th>Medicine Category</th>
+            <th>Medicine Expire Date</th>
+            <th>Medicine Control</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let m of medicines" class="container-fluid">
+        <tr>
+            <td>{{m.mid}}</td>
+            <td>{{m.mname}}</td>
+            <td>{{m.mprice}}</td>
+            <td>{{m.mdesc}}</td>
+            <td>{{m.mcategory}}</td>
+            <td>{{m.expiredate}}</td>
+            <td>{{m.mcontrol}}</td>
+            <td> <button class="btn btn-success" (click)=disableMedicine(this.m)>Disable</button> </td>
+        </tr>
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,25 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Remove Medicine</h2>
+                <form [formGroup]="remForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Medicine ID:</label>
+                        <input type="text" placeholder="ID" [(ngModel)]="medicines.mid" formControlName="mid" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['mid'].errors}">
+
+                        <div *ngIf="submitted && f['mid'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mid'].errors['required']" style="color: red;">
+                                Medicine ID Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Remove Medicine</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

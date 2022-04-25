@@ -1,0 +1,26 @@
+<h1 style="background-color: cadetblue; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">Admin Dashboard</h1>
+<div data-spy="scroll" data-target=".navbar">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a routerLink="adminlist" class="nav-link">Admin List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="userlist" class="nav-link">User List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="medslist" class="nav-link">All Medicines List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="endismed" class="nav-link">Enabled Medicines List</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="changepwdadmin" class="nav-link">Change Password</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="adminlogout" class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<router-outlet></router-outlet>

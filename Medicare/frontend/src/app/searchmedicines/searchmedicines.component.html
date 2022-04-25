@@ -1,0 +1,50 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Search Medicine</h2>
+                <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Medicine Name:</label>
+                        <input type="text" placeholder="Product Name" [(ngModel)]="medicines.mname" formControlName="mname"
+                            class="form-control" [ngClass]="{'is-invalid':submitted && f['mname'].errors}">
+
+                        <div *ngIf="submitted && f['mname'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mname'].errors['required']" style="color: red;">
+                                Required
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 style="background-color: greenyellow; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">List of Medicines</h1>
+<div style="text-align: center;">
+<table class="table table-dark table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Medicine Name</th>
+            <th>Medicine Price</th>
+            <th>Medicine Description</th>
+            <th>Medicine Category</th>
+            <th>Expire Date</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let m of meds" class="container-fluid">
+        <tr>
+            <td>{{m.mname}}</td>
+            <td>{{m.mprice}}</td>
+            <td>{{m.mdesc}}</td>
+            <td>{{m.mcategory}}</td>
+            <td>{{m.expiredate}}</td>
+            <td> <button routerLink="purcmed" class="btn btn-success" (click)="purchase(this.m)">Purchase</button> </td>
+        </tr>
+    </tbody>
+</table>
+</div>

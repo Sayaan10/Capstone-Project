@@ -1,0 +1,81 @@
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Add Medicine</h2>
+                <form [formGroup]="addmedForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Medicine Name:</label>
+                        <input type="text" placeholder="Name" [(ngModel)]="medicines.mname" formControlName="mname" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['mname'].errors}">
+
+                        <div *ngIf="submitted && f['mname'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mname'].errors['required']" style="color: red;">
+                                Medicine Name Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Medicine Price:</label>
+                        <input type="text" placeholder="Price" [(ngModel)]="medicines.mprice" formControlName="mprice" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['mprice'].errors}">
+
+                        <div *ngIf="submitted && f['mprice'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mprice'].errors['required']" style="color: red;">
+                                Medicine Price Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Medicine Description:</label>
+                        <input type="text" placeholder="Description" [(ngModel)]="medicines.mdesc" formControlName="mdesc" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['mdesc'].errors}">
+
+                        <div *ngIf="submitted && f['mdesc'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mdesc'].errors['required']" style="color: red;">
+                                Medicine Description Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Medicine Category:</label>
+                        <input type="text" placeholder="Category" [(ngModel)]="medicines.mcategory" formControlName="mcategory" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['mcategory'].errors}">
+
+                        <div *ngIf="submitted && f['mcategory'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mcategory'].errors['required']" style="color: red;">
+                                Medicine Category Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Medicine Expiration Date:</label>
+                        <input type="text" placeholder="Date" [(ngModel)]="medicines.expiredate" formControlName="expiredate" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['expiredate'].errors}">
+
+                        <div *ngIf="submitted && f['expiredate'].errors" class="invalid-feedback">
+                            <div *ngIf="f['expiredate'].errors['required']" style="color: red;">
+                                Medicine Expiration Date Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Medicine Control(0 or 1):</label>
+                        <input type="text" placeholder="Control" [(ngModel)]="medicines.mcontrol" formControlName="mcontrol" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['mcontrol'].errors}">
+
+                        <div *ngIf="submitted && f['mcontrol'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mcontrol'].errors['required']" style="color: red;">
+                                Medicine Control Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Add Medicine</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
